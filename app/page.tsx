@@ -57,8 +57,8 @@ export default function Home() {
       for (let i = 0; i < 15; i++) {
         if (!running || paused) break;
         const result = await model.fit(xs, ys, { epochs: 1 });
-        const loss = Array.isArray(result.history.loss) ? result.history.loss[0] : result.history.loss;
-        addLog(`  Epoch ${i + 1} → loss ${loss.toFixed(4)}`);
+        const loss = (Array.isArray(result.history.loss) ? result.history.loss[0] : result.history.loss) as number;
+addLog(`  Epoch ${i + 1} → loss ${loss.toFixed(4)}`);
         setProgress(((i + 1) / 15) * 100);
         await new Promise(r => setTimeout(r, 300));
       }
