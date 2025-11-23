@@ -6,14 +6,10 @@ export const metadata: Metadata = {
   description: "Real ML training in your browser",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-black text-white">{children}</body>
+      <body className="bg-black text-white min-h-screen">{children}</body>
     </html>
   );
 }
